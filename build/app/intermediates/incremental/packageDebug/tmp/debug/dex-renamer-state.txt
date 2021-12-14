@@ -1,0 +1,7 @@
+#Mon Dec 13 12:27:49 IST 2021
+base.1=/home/nintriva/Desktop/toffee app latest new/toffeeride_flutternew/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
+path.1=classes2.dex
+base.0=/home/nintriva/Desktop/toffee app latest new/toffeeride_flutternew/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

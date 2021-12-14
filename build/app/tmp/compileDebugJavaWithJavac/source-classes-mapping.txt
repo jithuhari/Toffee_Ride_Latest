@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/example/toffee_ride/BuildConfig.java
+ com.example.toffee_ride.BuildConfig
