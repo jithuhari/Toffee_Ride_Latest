@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nintriva/Desktop/toffee app latest new/toffeeride_flutternew/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/nintriva/Desktop/copy/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/nintriva/Desktop/toffee app latest new/toffeeride_flutternew/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/nintriva/Desktop/copy/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nintriva/Desktop/toffee app latest new/toffeeride_flutternew/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml",
+            "outputFile": "/home/nintriva/Desktop/copy/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml",
             "map": [
                 {
                     "source": "/home/nintriva/.gradle/caches/transforms-2/files-2.1/8c34b3cf6e9156ef40bcff53795a7892/jetified-exoplayer-ui-2.14.1/res/values-am/values-am.xml",

@@ -4,7 +4,6 @@ import 'package:get/instance_manager.dart';
 import 'package:toffee_ride/utils/utils.dart';
 import 'package:toffee_ride/widgets/neumorphic_view.dart';
 import 'package:toffee_ride/widgets/responsive.dart';
-
 import 'parent_controller.dart';
 
 class ParentScreen extends StatelessWidget {
@@ -182,7 +181,7 @@ class ParentContainerScreen extends StatelessWidget {
       body: Center(
         child: GestureDetector(
           onTap: () {
-            Get.toNamed('match_the_following');
+            Get.toNamed('fill_in_the_blanks');
           },
           child: NeumorphicContainer(
             color: Colors.lightBlue.shade100,
