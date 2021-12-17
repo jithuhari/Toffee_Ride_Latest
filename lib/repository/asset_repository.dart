@@ -10,7 +10,7 @@ abstract class AssetRepository extends GetxController {
   Future<List<CountryModel>> getCountries();
 }
 
-class AssetRepositoryImpl extends GetxController implements AssetRepository  { 
+class AssetRepositoryImpl extends GetxController implements AssetRepository {
   List<CountryModel>? _countries;
 
   @override

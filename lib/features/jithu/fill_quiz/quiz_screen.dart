@@ -3,9 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
 import 'package:toffee_ride/features/jithu/fill_quiz/quiz_controllere.dart';
-import 'package:toffee_ride/models/fill_in_the_blanks/fill_model.dart';
 
 class FillInTheBlanks extends StatelessWidget {
   final quizController = Get.put(QuizController());
@@ -36,13 +34,21 @@ class FillInTheBlanks extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Expanded(
-                              child: Text(
-                            controller.quiz.length.toString(),
-                            style: TextStyle(
-                                color: Colors.blue.shade900,
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold),
-                          )),
+                              child: ListView.builder(
+                                  itemCount: (controller.quiz != null)
+                                      ? controller.quiz!.isNotEmpty
+                                          ? 1
+                                          : 0
+                                      : 0,
+                                  itemBuilder: (context, index) {
+                                    return Text(
+                                      controller.quiz![index].question,
+                                      style: TextStyle(
+                                          color: Colors.blue.shade900,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    );
+                                  })),
                           Row(
                             //mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -104,7 +110,7 @@ class FillInTheBlanks extends StatelessWidget {
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
