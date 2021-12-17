@@ -40,6 +40,17 @@ class _MatchTheFollowingState extends State<MatchTheFollowing> {
                           imageuri: 'assets/images/jithu/animals/eagle.png',
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        TextCard(text: 'Eagle'),
+                        TextCard(text: 'Lion'),
+                        TextCard(text: 'Sheep'),
+                      ],
                     )
                   ],
                 ),
@@ -95,9 +106,39 @@ class ImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Draggable(
-      feedback: Text('Hello'),
-      child: Container(
+    return Container(
+      height: 150,
+      width: 150,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              offset: Offset(0.0, 1.0), //(x,y)
+              blurRadius: 6.0,
+            ),
+          ]),
+      child: Image(
+        height: 400,
+        width: 400,
+        image: AssetImage(imageuri),
+      ),
+    );
+  }
+}
+
+class TextCard extends StatelessWidget {
+  const TextCard({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
         height: 150,
         width: 150,
         decoration: BoxDecoration(
@@ -110,12 +151,14 @@ class ImageCard extends StatelessWidget {
                 blurRadius: 6.0,
               ),
             ]),
-        child: Image(
-          height: 400,
-          width: 400,
-          image: AssetImage(imageuri),
-        ),
-      ),
-    );
+        child: Center(
+            child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.blue,
+          ),
+        )));
   }
 }

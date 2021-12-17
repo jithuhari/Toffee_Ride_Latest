@@ -6,7 +6,6 @@ import 'package:toffee_ride/widgets/country_dropdown.dart';
 import 'package:toffee_ride/widgets/header_title.dart';
 import 'package:toffee_ride/widgets/underline_button.dart';
 import 'package:toffee_ride/widgets/vertical_spacer.dart';
-
 import '../registration_controller.dart';
 
 class RegistrationCreateAccountView extends StatelessWidget {
@@ -18,55 +17,52 @@ class RegistrationCreateAccountView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
-      child: Obx(
-        () => Column(
-        children: [
-          HeaderTitle(context: context, title: "Create Account"),
-          const SizedBox(
-            height: 40,
-          ),
-          Column(children: [
-            if (!_controller.isEmail)
-              Column(
-                children: [
-                  _dropdownField(context),
-                  const VerticalSpacer(height: 20),
-                  _mobileTextField(context),
-                ],
+      child: Obx(() => Column(
+            children: [
+              HeaderTitle(context: context, title: "Create Account"),
+              const SizedBox(
+                height: 40,
               ),
-            if (_controller.isEmail) _emailTextField(context),
-            const VerticalSpacer(height: 20),
-            _submitButton(context),
-            const VerticalSpacer(height: 40),
-            UnderlineButton(
-                context: context,
-                title: _controller.isEmail
-                    ? "Signup with mobile"
-                    : "Signup with email",
-                onTap: () => _controller.onChangeRegistrationType()),
-          ])
-        ],
-      )),
+              Column(children: [
+                if (!_controller.isEmail)
+                  Column(
+                    children: [
+                      _dropdownField(context),
+                      const VerticalSpacer(height: 20),
+                      _mobileTextField(context),
+                    ],
+                  ),
+                if (_controller.isEmail) _emailTextField(context),
+                const VerticalSpacer(height: 20),
+                _submitButton(context),
+                const VerticalSpacer(height: 40),
+                UnderlineButton(
+                    context: context,
+                    title: _controller.isEmail
+                        ? "Signup with mobile"
+                        : "Signup with email",
+                    onTap: () => _controller.onChangeRegistrationType()),
+              ])
+            ],
+          )),
     );
   }
 
   Widget _dropdownField(BuildContext context) {
     final RegistrationController _controller = Get.find();
-    return Obx(
-      () => CountryDropDown(
+    return Obx(() => CountryDropDown(
         context: context,
         selectedCountry: _controller.selectedCountry,
-        countries: _controller.countries, 
-        onChanged: (newValue) => newValue != null ? _controller.onSelectedCountry(newValue) : null
-      )
-    );
+        countries: _controller.countries,
+        onChanged: (newValue) =>
+            newValue != null ? _controller.onSelectedCountry(newValue) : null));
   }
 
   Widget _mobileTextField(BuildContext context) {
     final RegistrationController _controller = Get.find();
     return CorneredTextField(
-      context: context, 
-      controller: _controller.mobileNumberController, 
+      context: context,
+      controller: _controller.mobileNumberController,
       placeholder: "Enter mobile number",
       keyboardType: TextInputType.phone,
     );
@@ -75,8 +71,8 @@ class RegistrationCreateAccountView extends StatelessWidget {
   Widget _emailTextField(BuildContext context) {
     final RegistrationController _controller = Get.find();
     return CorneredTextField(
-      context: context, 
-      controller: _controller.emailController, 
+      context: context,
+      controller: _controller.emailController,
       placeholder: "Enter your email",
       keyboardType: TextInputType.emailAddress,
     );

@@ -1,4 +1,4 @@
-#Tue Dec 14 15:30:30 IST 2021
+#Thu Dec 16 09:54:36 IST 2021
 base.1=/home/nintriva/Desktop/copy/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
 path.1=classes2.dex
 base.0=/home/nintriva/Desktop/copy/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex

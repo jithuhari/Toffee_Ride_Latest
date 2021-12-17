@@ -5,7 +5,6 @@ import 'package:toffee_ride/models/country_model.dart';
 import 'package:toffee_ride/utils/utils.dart';
 
 class RegistrationController extends GetxController {
-  
   var selectedPageIndex = 0.obs;
   final pageController = PageController();
 
@@ -108,10 +107,10 @@ class RegistrationController extends GetxController {
       _isLoading(true);
       try {
         final response = await ApiRepository.to.registerWithEmail(
-          studentClass: _selectedClass.value ?? '',
-          studentGender: _selectedGender.value ?? '',
-          studentName: studentNameController.text,
-          email: emailController.text);
+            studentClass: _selectedClass.value ?? '',
+            studentGender: _selectedGender.value ?? '',
+            studentName: studentNameController.text,
+            email: emailController.text);
 
         _isLoading(false);
 
@@ -134,7 +133,7 @@ class RegistrationController extends GetxController {
       }
     } else {
       _showErrorSnackbar(title: "Error", message: _validationStatus.toString());
-    }    
+    }
   }
 
   ValidationStatus _validateEmail() {
@@ -154,10 +153,10 @@ class RegistrationController extends GetxController {
       _isLoading(true);
       try {
         final response = await ApiRepository.to.registerWithMobile(
-          studentClass: _selectedClass.value ?? '',
-          studentGender: _selectedGender.value ?? '',
-          studentName: studentNameController.text,
-          mobile: mobileNumberController.text);
+            studentClass: _selectedClass.value ?? '',
+            studentGender: _selectedGender.value ?? '',
+            studentName: studentNameController.text,
+            mobile: mobileNumberController.text);
 
         _isLoading(false);
 

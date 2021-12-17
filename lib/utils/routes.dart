@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
 import 'package:toffee_ride/features/accounts/accounts.dart';
 import 'package:toffee_ride/features/home/home.dart';
-import 'package:toffee_ride/features/jithu/fill_quiz/fill_in_the_blanks.dart';
+import 'package:toffee_ride/features/jithu/Lesson/lesson.dart';
+import 'package:toffee_ride/features/jithu/fill_quiz/quiz_screen.dart';
 import 'package:toffee_ride/features/jithu/match_the_following/match_the_following.dart';
 import 'package:toffee_ride/features/login/login.dart';
 import 'package:toffee_ride/features/onboarding/onboarding.dart';
@@ -23,7 +24,8 @@ List<GetPage> routes() => [
       GetPage(name: "/parent", page: () => const ParentScreen()),
       GetPage(name: "/view_contents", page: () => const ViewContentsScreen()),
       GetPage(name: "/subject_details", page: () => const SubjectScreen()),
-      GetPage(name: "/fill_in_the_blanks", page: () => const FillInTheBlanks()),
+      GetPage(name: "/fill_in_the_blanks", page: () => FillInTheBlanks()),
       GetPage(
           name: "/match_the_following", page: () => const MatchTheFollowing()),
+      GetPage(name: "/lesson_page", page: () => const LessonPage()),
     ];
