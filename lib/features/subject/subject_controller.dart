@@ -44,7 +44,11 @@ class SubjectController extends GetxController {
       _isLoading(true);
       try {
         final request = GetSubjectDetailsRequest(
-            user: user, account: account, subjectId: _subjectId!, subjectName: _subjectName!, grade: '8');
+            user: user,
+            account: account,
+            subjectId: _subjectId!,
+            subjectName: _subjectName!,
+            grade: '8');
         final response =
             await ApiRepository.to.getSubjectDetails(request: request);
 

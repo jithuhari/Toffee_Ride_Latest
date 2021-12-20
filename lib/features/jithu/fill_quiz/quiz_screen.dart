@@ -17,115 +17,115 @@ class FillInTheBlanks extends StatelessWidget {
       DeviceOrientation.landscapeRight,
     ]);
 
-    return Scaffold(
-      body: GetBuilder<QuizController>(
-          init: QuizController(),
-          builder: (controller) {
-            return Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/images/Sky.png'))),
-              child: SafeArea(
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                              child: ListView.builder(
-                                  itemCount: (controller.quiz != null)
-                                      ? controller.quiz!.isNotEmpty
-                                          ? 1
-                                          : 0
-                                      : 0,
-                                  itemBuilder: (context, index) {
-                                    return Text(
-                                      controller.quiz![index].question,
+    return GetBuilder<QuizController>(
+        init: QuizController(),
+        builder: (controller) {
+          return Scaffold(
+              body: Obx(
+            () => controller.isLoading
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : controller.quiz != null
+                    ? Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage('assets/images/Sky.png'))),
+                        child: SafeArea(
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      controller.quiz!.question,
                                       style: TextStyle(
                                           color: Colors.blue.shade900,
                                           fontSize: 22,
                                           fontWeight: FontWeight.bold),
-                                    );
-                                  })),
-                          Row(
-                            //mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Expanded(
-                                child: Image(
-                                  height: 300,
-                                  width: 300,
-                                  image:
-                                      AssetImage('assets/images/boystudy.png'),
-                                  // NetworkImage(items[0]
-                                  //     .coverPageImgBase64
-                                  //     .toString()),
+                                    ),
+                                    Row(
+                                      //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Expanded(
+                                          child: Image(
+                                            height: 300,
+                                            width: 300,
+                                            image: AssetImage(
+                                                'assets/images/boystudy.png'),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Column(
+                                            children: [
+                                              SizedBox(
+                                                height: 200,
+                                                child: ListView.builder(
+                                                  itemCount: controller
+                                                      .quiz!.options.length,
+                                                  itemBuilder:
+                                                      (context, index) {
+                                                    return PinkButton(
+                                                        answer: controller.quiz!
+                                                            .options[index]);
+                                                  },
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
                                 ),
                               ),
-                              Column(
-                                children: [
-                                  PinkButton(answer: '1'),
-                                  PinkButton(answer: '2'),
-                                  PinkButton(answer: '3'),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image(
-                                width: 50,
-                                height: 50,
-                                image: AssetImage(
-                                    'assets/images/newicons/Back_150.png')),
-                          ),
-                          Column(
-                            children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Image(
-                                    width: 50,
-                                    height: 50,
-                                    image: AssetImage(
-                                        'assets/images/newicons/Repeat_150.png')),
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image(
+                                          width: 50,
+                                          height: 50,
+                                          image: AssetImage(
+                                              'assets/images/newicons/Back_150.png')),
+                                    ),
+                                    Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Image(
+                                              width: 50,
+                                              height: 50,
+                                              image: AssetImage(
+                                                  'assets/images/newicons/Repeat_150.png')),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Image(
+                                              width: 50,
+                                              height: 50,
+                                              image: AssetImage(
+                                                  'assets/images/newicons/ToffeeShot_150.png')),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Image(
-                                    width: 50,
-                                    height: 50,
-                                    image: AssetImage(
-                                        'assets/images/newicons/ToffeeShot_150.png')),
-                              )
                             ],
                           ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          }),
-    );
+                        ),
+                      )
+                    : Container(),
+          ));
+        });
   }
-
-  // Future<List<ActivityModel>> ReadJsonData() async {
-  //   final jsondata =
-  //       await rootBundle.loadString('assets/jsons/model/activity_model.json');
-  //   final list = json.decode(jsondata) as List<dynamic>;
-
-  //   return list.map((e) => ActivityModel.fromJson(e)).toList();
-  // }
 }
 
 class PinkButton extends StatelessWidget {
