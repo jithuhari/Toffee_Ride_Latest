@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
+import 'package:toffee_ride/features/jithu/match_the_following/drag_list_test.dart';
 import 'package:toffee_ride/utils/utils.dart';
 import 'package:toffee_ride/widgets/neumorphic_view.dart';
 import 'package:toffee_ride/widgets/responsive.dart';
@@ -181,7 +182,7 @@ class ParentContainerScreen extends StatelessWidget {
       body: Center(
         child: GestureDetector(
           onTap: () {
-            Get.toNamed('fill_in_the_blanks');
+            Get.to(DragTest());
           },
           child: NeumorphicContainer(
             color: Colors.lightBlue.shade100,

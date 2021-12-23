@@ -13,10 +13,12 @@ class ApiBaseHelper {
   http.Client client = http.Client();
 
   Future<dynamic> get(
-      {required String endpoint, required Map<String, String> params, Map<String, String>? headers}) async {
+      {required String endpoint,
+      required Map<String, String> params,
+      Map<String, String>? headers}) async {
     dynamic responseJson;
     try {
-      var url = Uri.https(_baseUrl, endpoint, params);
+      var url = Uri.http(_baseUrl, endpoint, params);
       var response = await client.get(url, headers: headers ?? _headers);
       responseJson = _returnResponse(response);
     } on SocketException {
@@ -29,7 +31,7 @@ class ApiBaseHelper {
     dynamic responseJson;
     try {
       print(jsonEncode(params));
-      var url = Uri.https(_baseUrl, endpoint);
+      var url = Uri.http(_baseUrl, endpoint);
       var response =
           await client.post(url, headers: _headers, body: jsonEncode(params));
       responseJson = _returnResponse(response);

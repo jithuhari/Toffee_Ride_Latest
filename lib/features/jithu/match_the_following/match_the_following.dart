@@ -47,9 +47,67 @@ class _MatchTheFollowingState extends State<MatchTheFollowing> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        TextCard(text: 'Eagle'),
-                        TextCard(text: 'Lion'),
-                        TextCard(text: 'Sheep'),
+                        Stack(
+                          children: [
+                            DragTarget(
+                              builder: (context, candidateData, rejectedData) =>
+                                  Center(
+                                child: Container(
+                                  height: 150,
+                                  width: 150,
+                                  child: Text('Lion'),
+                                ),
+                              ),
+                              onWillAccept: (data) => true,
+                              onAccept: (data) {},
+                            ),
+                            Draggable(
+                              feedback: TextCard(text: 'Eagle'),
+                              childWhenDragging: Container(),
+                              child: TextCard(text: 'Eagle'),
+                            ),
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            DragTarget(
+                                builder:
+                                    (context, candidateData, rejectedData) =>
+                                        Center(
+                                          child: Container(
+                                            height: 150,
+                                            width: 150,
+                                            child: Text('Sheep'),
+                                          ),
+                                        )),
+                            Draggable(
+                              feedback: TextCard(text: 'Lion'),
+                              childWhenDragging: Container(),
+                              child: TextCard(text: 'Lion'),
+                            ),
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            Draggable(
+                              feedback: TextCard(text: 'Sheep'),
+                              childWhenDragging: Container(),
+                              child: TextCard(text: 'Sheep'),
+                            ),
+                            DragTarget(
+                              builder: (context, candidateData, rejectedData) =>
+                                  Center(
+                                child: Container(
+                                  height: 150,
+                                  width: 150,
+                                  child: Text('Eagle'),
+                                ),
+                              ),
+                              onWillAccept: (data) => true,
+                              onAccept: (data) {},
+                            ),
+                          ],
+                        ),
                       ],
                     )
                   ],
@@ -106,23 +164,24 @@ class ImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      width: 150,
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              offset: Offset(0.0, 1.0), //(x,y)
-              blurRadius: 6.0,
-            ),
-          ]),
-      child: Image(
-        height: 400,
-        width: 400,
-        image: AssetImage(imageuri),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        height: 150,
+        width: 150,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0.0, 1.0), //(x,y)
+                blurRadius: 6.0,
+              ),
+            ]),
+        child: Image(
+          image: AssetImage(imageuri),
+        ),
       ),
     );
   }

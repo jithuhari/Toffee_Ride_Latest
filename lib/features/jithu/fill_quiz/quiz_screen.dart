@@ -18,10 +18,10 @@ class FillInTheBlanks extends StatelessWidget {
     ]);
 
     return GetBuilder<QuizController>(
-        init: QuizController(),
-        builder: (controller) {
-          return Scaffold(
-              body: Obx(
+      init: QuizController(),
+      builder: (controller) {
+        return Scaffold(
+          body: Obx(
             () => controller.isLoading
                 ? const Center(
                     child: CircularProgressIndicator(),
@@ -47,7 +47,7 @@ class FillInTheBlanks extends StatelessWidget {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Row(
-                                      //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      //mainAxisAlignme nt: MainAxisAlignment.spaceAround,
                                       children: [
                                         Expanded(
                                           child: Image(
@@ -68,8 +68,21 @@ class FillInTheBlanks extends StatelessWidget {
                                                   itemBuilder:
                                                       (context, index) {
                                                     return PinkButton(
-                                                        answer: controller.quiz!
-                                                            .options[index]);
+                                                      answer: controller
+                                                          .quiz!.options[index],
+                                                      onTap: () {
+                                                        if (controller.quiz!
+                                                                    .options[
+                                                                index] ==
+                                                            controller
+                                                                .quiz!.answer) {
+                                                          print('true');
+                                                        } else {
+                                                          print('false');
+                                                        }
+                                                      },
+                                                      buttonColor: Colors.pink,
+                                                    );
                                                   },
                                                 ),
                                               ),
@@ -123,8 +136,10 @@ class FillInTheBlanks extends StatelessWidget {
                         ),
                       )
                     : Container(),
-          ));
-        });
+          ),
+        );
+      },
+    );
   }
 }
 
@@ -132,24 +147,26 @@ class PinkButton extends StatelessWidget {
   const PinkButton({
     Key? key,
     required this.answer,
+    required this.onTap,
+    required this.buttonColor,
   }) : super(key: key);
 
   final String answer;
+  final GestureTapCallback onTap;
+  final Color buttonColor;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: GestureDetector(
-        onTap: () {
-          print('object');
-        },
+        onTap: onTap,
         child: Container(
           padding: EdgeInsets.all(10),
           width: 250,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.pink,
+            color: buttonColor,
           ),
           child: Center(
               child: Text(
