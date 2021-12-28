@@ -1,0 +1,8 @@
+2021/12/28-14:36:39.197 df6 Reusing MANIFEST /tmp/flutter_tools.PVZBTO/flutter_tools_chrome_device.WJBDPK/Default/IndexedDB/http_localhost_45119.indexeddb.leveldb/MANIFEST-000001
+2021/12/28-14:36:39.197 df6 Recovering log #7
+2021/12/28-14:36:39.197 df6 Reusing old log /tmp/flutter_tools.PVZBTO/flutter_tools_chrome_device.WJBDPK/Default/IndexedDB/http_localhost_45119.indexeddb.leveldb/000007.log 
+2021/12/28-14:37:18.038 b9b Level-0 table #11: started
+2021/12/28-14:37:18.038 b9b Level-0 table #11: 0 bytes OK
+2021/12/28-14:37:18.050 b9b Delete type=0 #7
+2021/12/28-14:37:18.050 b9b Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/12/28-14:37:18.050 b9b Manual compaction at level-1 from (begin) .. (end); will stop at (end)
