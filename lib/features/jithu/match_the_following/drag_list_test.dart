@@ -25,69 +25,62 @@ class _DragTestState extends State<DragTest> {
               // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Expanded(
-                  flex: 2,
-                  child: Column(
+                  flex: 3,
+                  child: ListView(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    //mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          ImageCard(
-                            imageuri: 'assets/images/jithu/animals/lion.png',
-                          ),
-                          ImageCard(
-                            imageuri: 'assets/images/jithu/animals/sheep.png',
-                          ),
-                          ImageCard(
-                            imageuri: 'assets/images/jithu/animals/eagle.png',
-                          ),
-                        ],
+                      ImageCard(
+                        imageuri: 'assets/images/jithu/animals/lion.png',
+                      ),
+                      ImageCard(
+                        imageuri: 'assets/images/jithu/animals/sheep.png',
+                      ),
+                      ImageCard(
+                        imageuri: 'assets/images/jithu/animals/eagle.png',
                       ),
                     ],
                   ),
                 ),
                 Expanded(
                   flex: 2,
-                  child: ReorderableListView(
-                    scrollDirection: Axis.horizontal,
-                    // itemBuilder: itemBuilder,
-                    // itemCount: itemCount,
-                    onReorder: (oldIndex, newIndex) {
-                      controller.reorder(oldIndex, newIndex);
-                    },
-                    children: controller.myFav
-                        .map(
-                          (e) => Row(
-                            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            // crossAxisAlignment: CrossAxisAlignment.center,
-                            key: ValueKey(e),
-                            children: [
-                              Container(
-                                  //key: ValueKey(e),
-                                  height: 150,
-                                  width: 150,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey,
-                                          offset: Offset(0.0, 1.0), //(x,y)
-                                          blurRadius: 6.0,
-                                        ),
-                                      ]),
-                                  child: Center(
-                                      child: Text(
-                                    e,
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.blue,
-                                    ),
-                                  ))),
-                            ],
-                          ),
-                        )
-                        .toList(),
+                  child: Center(
+                    child: ReorderableListView(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      onReorder: (oldIndex, newIndex) {
+                        controller.reorder(oldIndex, newIndex);
+                      },
+                      children: controller.myFav
+                          .map(
+                            (e) => Container(
+                                margin: EdgeInsets.all(40),
+                                key: ValueKey(e),
+                                height: 140,
+                                width: 140,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey,
+                                        offset: Offset(0.0, 1.0), //(x,y)
+                                        blurRadius: 6.0,
+                                      ),
+                                    ]),
+                                child: Center(
+                                    child: Text(
+                                  e,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue,
+                                  ),
+                                ))),
+                          )
+                          .toList(),
+                    ),
                   ),
                 ),
               ],
@@ -112,8 +105,9 @@ class ImageCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 150,
-        width: 150,
+        margin: EdgeInsets.all(40),
+        height: 140,
+        width: 140,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),

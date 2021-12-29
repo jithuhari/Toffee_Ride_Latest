@@ -1,0 +1,8 @@
+2021/12/29-12:16:09.974 4abf Reusing MANIFEST /tmp/flutter_tools.RZWBND/flutter_tools_chrome_device.PWRGWX/Default/IndexedDB/http_localhost_42757.indexeddb.leveldb/MANIFEST-000001
+2021/12/29-12:16:09.974 4abf Recovering log #7
+2021/12/29-12:16:09.975 4abf Reusing old log /tmp/flutter_tools.RZWBND/flutter_tools_chrome_device.PWRGWX/Default/IndexedDB/http_localhost_42757.indexeddb.leveldb/000007.log 
+2021/12/29-12:18:32.823 4c05 Level-0 table #11: started
+2021/12/29-12:18:32.823 4c05 Level-0 table #11: 0 bytes OK
+2021/12/29-12:18:32.847 4c05 Delete type=0 #7
+2021/12/29-12:18:32.848 4c05 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/12/29-12:18:32.848 4c05 Manual compaction at level-1 from (begin) .. (end); will stop at (end)
