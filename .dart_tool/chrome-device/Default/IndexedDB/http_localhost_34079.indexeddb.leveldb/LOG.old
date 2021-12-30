@@ -1,6 +1,8 @@
-2021/12/29-17:10:22.440 45fa Creating DB /tmp/flutter_tools.GXCDJW/flutter_tools_chrome_device.LISCDG/Default/IndexedDB/http_localhost_34079.indexeddb.leveldb since it was missing.
-2021/12/29-17:10:22.453 45fa Reusing MANIFEST /tmp/flutter_tools.GXCDJW/flutter_tools_chrome_device.LISCDG/Default/IndexedDB/http_localhost_34079.indexeddb.leveldb/MANIFEST-000001
-2021/12/29-17:32:53.746 4b74 Level-0 table #5: started
-2021/12/29-17:32:53.751 4b74 Level-0 table #5: 2640 bytes OK
-2021/12/29-17:32:53.759 4b74 Delete type=0 #3
-2021/12/29-17:32:53.759 4b74 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/12/29-17:32:56.851 4e16 Reusing MANIFEST /tmp/flutter_tools.GXCDJW/flutter_tools_chrome_device.LISCDG/Default/IndexedDB/http_localhost_34079.indexeddb.leveldb/MANIFEST-000001
+2021/12/29-17:32:56.851 4e16 Recovering log #4
+2021/12/29-17:32:56.851 4e16 Reusing old log /tmp/flutter_tools.GXCDJW/flutter_tools_chrome_device.LISCDG/Default/IndexedDB/http_localhost_34079.indexeddb.leveldb/000004.log 
+2021/12/29-17:34:27.353 4b74 Level-0 table #8: started
+2021/12/29-17:34:27.354 4b74 Level-0 table #8: 0 bytes OK
+2021/12/29-17:34:27.361 4b74 Delete type=0 #4
+2021/12/29-17:34:27.361 4b74 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/12/29-17:34:27.361 4b74 Manual compaction at level-1 from (begin) .. (end); will stop at (end)
