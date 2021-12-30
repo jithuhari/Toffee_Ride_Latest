@@ -29,9 +29,11 @@ class FillInTheBlanks extends StatelessWidget {
                 : controller.quiz != null
                     ? Container(
                         decoration: BoxDecoration(
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage('assets/images/Sky.png'))),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/Sky.png'),
+                          ),
+                        ),
                         child: SafeArea(
                           child: Row(
                             children: [
