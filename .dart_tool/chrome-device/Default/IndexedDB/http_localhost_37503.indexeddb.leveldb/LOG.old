@@ -1,0 +1,8 @@
+2022/01/03-10:22:58.899 2dd1 Reusing MANIFEST /tmp/flutter_tools.JOSJFW/flutter_tools_chrome_device.UJRIGG/Default/IndexedDB/http_localhost_37503.indexeddb.leveldb/MANIFEST-000001
+2022/01/03-10:22:58.899 2dd1 Recovering log #7
+2022/01/03-10:22:58.899 2dd1 Reusing old log /tmp/flutter_tools.JOSJFW/flutter_tools_chrome_device.UJRIGG/Default/IndexedDB/http_localhost_37503.indexeddb.leveldb/000007.log 
+2022/01/03-10:23:41.138 2dda Level-0 table #11: started
+2022/01/03-10:23:41.138 2dda Level-0 table #11: 0 bytes OK
+2022/01/03-10:23:41.142 2dda Delete type=0 #7
+2022/01/03-10:23:41.142 2dda Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2022/01/03-10:23:41.142 2dda Manual compaction at level-1 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,8 @@
+2022/01/03-11:13:11.892 7309 Reusing MANIFEST /tmp/flutter_tools.OYTDBJ/flutter_tools_chrome_device.FXCKMP/Default/IndexedDB/http_localhost_46793.indexeddb.leveldb/MANIFEST-000001
+2022/01/03-11:13:11.892 7309 Recovering log #4
+2022/01/03-11:13:11.892 7309 Reusing old log /tmp/flutter_tools.OYTDBJ/flutter_tools_chrome_device.FXCKMP/Default/IndexedDB/http_localhost_46793.indexeddb.leveldb/000004.log 
+2022/01/03-11:14:34.557 7888 Level-0 table #8: started
+2022/01/03-11:14:34.557 7888 Level-0 table #8: 0 bytes OK
+2022/01/03-11:14:34.561 7888 Delete type=0 #4
+2022/01/03-11:14:34.561 7888 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2022/01/03-11:14:34.562 7888 Manual compaction at level-1 from (begin) .. (end); will stop at (end)
