@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class RearrangeController extends GetxController {
@@ -9,6 +10,14 @@ class RearrangeController extends GetxController {
     'Let\'s',
     'She\'s',
   ].obs;
+  List<String> answer = [
+    'Let\'s',
+    'I\'m',
+    'Don\'t',
+    'We\'ve',
+    'She\'s',
+    'They\'re',
+  ];
 
   @override
   void onInit() {
@@ -35,5 +44,12 @@ class RearrangeController extends GetxController {
     final index = newIndex > oldIndex ? newIndex - 1 : newIndex;
     final user = myFav.removeAt(oldIndex);
     myFav.insert(index, user);
+
+    print(myFav);
+    if (listEquals(myFav, answer)) {
+      print("success");
+    } else {
+      print("fails");
+    }
   }
 }

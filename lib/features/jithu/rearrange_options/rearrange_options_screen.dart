@@ -45,9 +45,11 @@ class _RearrangeScreenState extends State<RearrangeScreen> {
                               child: Text(
                                 'Rearrange the options on the right to match with the items in the left',
                                 style: TextStyle(
-                                    color: Colors.blue.shade900,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20),
+                                  color: Colors.blue.shade900,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize:
+                                      MediaQuery.of(context).size.height * .05,
+                                ),
                               ),
                             ),
                             SizedBox(
@@ -63,7 +65,7 @@ class _RearrangeScreenState extends State<RearrangeScreen> {
                                     child: Container(
                                       height:
                                           MediaQuery.of(context).size.height *
-                                              .7,
+                                              .67,
                                       decoration: BoxDecoration(
                                           color: Colors.lightBlue,
                                           borderRadius:
@@ -102,7 +104,7 @@ class _RearrangeScreenState extends State<RearrangeScreen> {
                                     child: Container(
                                       height:
                                           MediaQuery.of(context).size.height *
-                                              .7,
+                                              .67,
                                       decoration: BoxDecoration(
                                           color: Colors.lightBlue,
                                           borderRadius:
@@ -144,7 +146,11 @@ class _RearrangeScreenState extends State<RearrangeScreen> {
                                                   child: Text(
                                                     e,
                                                     style: TextStyle(
-                                                      fontSize: 20,
+                                                      fontSize:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height *
+                                                              .05,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       color: Colors.white,
@@ -241,7 +247,7 @@ class TextCard extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            fontSize: 20,
+            fontSize: MediaQuery.of(context).size.height * .05,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
