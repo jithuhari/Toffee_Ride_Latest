@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
+import 'package:toffee_ride/features/jithu/listen_and_spell/listen_and_spell_screen.dart';
 import 'package:toffee_ride/features/jithu/match_the_following/match_the_following.dart';
 import 'package:toffee_ride/features/jithu/rearrange_options/rearrange_options_controller.dart';
 import 'package:toffee_ride/features/jithu/rearrange_options/rearrange_options_screen.dart';
@@ -184,7 +185,7 @@ class ParentContainerScreen extends StatelessWidget {
       body: Center(
         child: GestureDetector(
           onTap: () {
-            Get.to(RearrangeScreen());
+            Get.to(ListenAndSpell());
           },
           child: NeumorphicContainer(
             color: Colors.lightBlue.shade100,
