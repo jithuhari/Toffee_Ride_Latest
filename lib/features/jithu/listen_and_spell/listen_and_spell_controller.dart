@@ -3,43 +3,36 @@ import 'package:get/get.dart';
 
 class ListenAndSpellController extends GetxController {
   List<String> alphabetsRow1 = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
+    'A',
+    'B',
+    'C',
+    'D',
+    'E ',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U',
+    'V',
+    'W',
+    'X',
+    'Y',
+    'Z',
+    '⌫',
   ].obs;
-  List<String> alphabetsRow2 = [
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-  ].obs;
-  List<String> alphabetsRow3 = [
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z',
-    '<-',
-  ].obs;
-  List<String> answer = [
-    'Let\'s',
-    'I\'m',
-    'Don\'t',
-  ];
+
+  List<String> word = List<String>.empty(growable: true).obs;
 
   @override
   void onInit() {
@@ -66,14 +59,6 @@ class ListenAndSpellController extends GetxController {
     final index1 = newIndex > oldIndex ? newIndex - 1 : newIndex;
     final user1 = alphabetsRow1.removeAt(oldIndex);
     alphabetsRow1.insert(index1, user1);
-
-    final index2 = newIndex > oldIndex ? newIndex - 1 : newIndex;
-    final user2 = alphabetsRow2.removeAt(oldIndex);
-    alphabetsRow2.insert(index2, user2);
-
-    final index3 = newIndex > oldIndex ? newIndex - 1 : newIndex;
-    final user3 = alphabetsRow3.removeAt(oldIndex);
-    alphabetsRow3.insert(index3, user3);
 
     // print(myFav);
     // if (listEquals(myFav, answer)) {

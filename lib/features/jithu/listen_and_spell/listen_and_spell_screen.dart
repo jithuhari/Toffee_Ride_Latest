@@ -11,7 +11,6 @@ class ListenAndSpell extends StatefulWidget {
 }
 
 class _ListenAndSpellState extends State<ListenAndSpell> {
-  String text = '';
   final listenAndSpellController = Get.put(ListenAndSpellController());
   @override
   Widget build(BuildContext context) {
@@ -23,182 +22,152 @@ class _ListenAndSpellState extends State<ListenAndSpell> {
       init: ListenAndSpellController(),
       builder: (controller) {
         return Scaffold(
-            body: Obx(
-          () => Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage('assets/images/Sky.png'),
-              ),
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 8,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        'Listen and spell the word by clicking on the letters below.',
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height * .05,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue.shade900,
-                        ),
-                      ),
-                      Container(
-                        height: 35,
-                        width: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade400,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            // ListView.builder(
-                            //     itemCount: controller.alphabetsRow1.length,
-                            //     shrinkWrap: true,
-                            //     //scrollDirection: Axis.horizontal,
-                            //     itemBuilder: (context, index) {
-                            //    return
-                            Text(
-                              text,
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Container(
-                              height: 5,
-                              width: 25,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                              ),
-                            )
-                            // })
-                          ],
-                        ),
-                      ),
-                      Container(
-                        height: MediaQuery.of(context).size.height * .1,
-                        child: Row(
-                          children: [
-                            ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                shrinkWrap: true,
-                                itemCount: controller.alphabetsRow1.length,
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: ElevatedButton(
-                                        onPressed: () {
-                                          setState(() {
-                                            text =
-                                                controller.alphabetsRow1[index];
-                                          });
-                                        },
-                                        child: Text(
-                                            controller.alphabetsRow1[index])),
-                                  );
-                                }),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        //width: 1000,
-                        height: MediaQuery.of(context).size.height * .1,
-                        child: Row(
-                          children: [
-                            ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                shrinkWrap: true,
-                                itemCount: controller.alphabetsRow2.length,
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: ElevatedButton(
-                                        onPressed: () {
-                                          setState(() {
-                                            text =
-                                                controller.alphabetsRow2[index];
-                                          });
-                                        },
-                                        child: Text(
-                                            controller.alphabetsRow2[index])),
-                                  );
-                                }),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        //width: 1000,
-                        height: MediaQuery.of(context).size.height * .1,
-                        child: Row(
-                          children: [
-                            ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                shrinkWrap: true,
-                                itemCount: controller.alphabetsRow3.length,
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: ElevatedButton(
-                                        onPressed: () {
-                                          setState(() {
-                                            text =
-                                                controller.alphabetsRow3[index];
-                                          });
-                                        },
-                                        child: Text(
-                                            controller.alphabetsRow3[index])),
-                                  );
-                                }),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+          body: SafeArea(
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/images/Sky.png'),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 8,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image(
-                              width: 50,
-                              height: 50,
-                              image: AssetImage(
-                                  'assets/images/newicons/Back_150.png')),
+                        Text(
+                          'Listen and spell the word by clicking on the letters below.',
+                          style: TextStyle(
+                            fontSize: MediaQuery.of(context).size.height * .06,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue.shade900,
+                          ),
                         ),
-                        Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Image(
-                                  width: 50,
-                                  height: 50,
-                                  image: AssetImage(
-                                      'assets/images/newicons/ToffeeShot_150.png')),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Image(
-                                  width: 50,
-                                  height: 50,
-                                  image: AssetImage(
-                                      'assets/images/newicons/Done_150.png')),
-                            )
-                          ],
+                        Container(
+                          height: 45,
+                          width: 300,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.blue.withOpacity(.3),
+                          ),
+                          child: Center(
+                            child: ListView.builder(
+                                itemCount: controller.word.length,
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, index) {
+                                  return Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(2.0),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              controller.word[index],
+                                              style: TextStyle(
+                                                  fontSize: 25,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(2.0),
+                                        child: Container(
+                                          height: 5,
+                                          width: 25,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  );
+                                }),
+                          ),
+                        ),
+                        GridView.builder(
+                          itemCount: controller.alphabetsRow1.length,
+                          shrinkWrap: true,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 9),
+                          itemBuilder: (context, index) {
+                            return LayoutBuilder(
+                                builder: (context, constraints) {
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: ElevatedButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        if (index != 26) {
+                                          controller.word.add(
+                                            controller.alphabetsRow1[index],
+                                          );
+                                        } else {
+                                          controller.word.removeLast();
+                                        }
+                                      });
+                                    },
+                                    child: Text(
+                                      controller.alphabetsRow1[index],
+                                      style: TextStyle(fontSize: 25),
+                                    )),
+                              );
+                            });
+                          },
                         ),
                       ],
                     ),
                   ),
-                ),
-              ],
+                  Expanded(
+                    flex: 1,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image(
+                                width: 50,
+                                height: 50,
+                                image: AssetImage(
+                                    'assets/images/newicons/Back_150.png')),
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image(
+                                    width: 50,
+                                    height: 50,
+                                    image: AssetImage(
+                                        'assets/images/newicons/ToffeeShot_150.png')),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image(
+                                    width: 50,
+                                    height: 50,
+                                    image: AssetImage(
+                                        'assets/images/newicons/Done_150.png')),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ));
+        );
       },
     );
   }
