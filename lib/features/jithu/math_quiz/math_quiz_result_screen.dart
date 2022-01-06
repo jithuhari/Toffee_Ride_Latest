@@ -104,7 +104,7 @@ class _ResultState extends State<Result> {
                           ),
                         ),
                         Text(
-                          ' ${widget.notAttended} Not Attended out of',
+                          ' ${widget.notAttended} Not Attended',
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.orange.shade700,
@@ -113,7 +113,7 @@ class _ResultState extends State<Result> {
                           ),
                         ),
                         Text(
-                          ' ${widget.totalQuestion}',
+                          ' out of ${widget.totalQuestion}',
                           style: TextStyle(
                             fontSize: 20,
 
