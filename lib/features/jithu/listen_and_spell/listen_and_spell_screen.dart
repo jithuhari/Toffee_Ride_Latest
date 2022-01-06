@@ -46,48 +46,55 @@ class _ListenAndSpellState extends State<ListenAndSpell> {
                           ),
                         ),
                         Container(
-                          height: 45,
+                          height: 60,
                           width: 300,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.blue.withOpacity(.3),
                           ),
-                          child: Center(
-                            child: ListView.builder(
+                          child: Column(
+                            children: [
+                              Expanded(
+                                  child: ListView.builder(
                                 itemCount: controller.word.length,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) {
-                                  return Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(2.0),
-                                        child: Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              controller.word[index],
-                                              style: TextStyle(
-                                                  fontSize: 25,
-                                                  fontWeight: FontWeight.w600),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(2.0),
-                                        child: Container(
-                                          height: 5,
-                                          width: 25,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      )
-                                    ],
+                                  return Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(6, 0, 6, 2),
+                                    child: Text(
+                                      controller.word[index],
+                                      style: TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.w600),
+                                    ),
                                   );
-                                }),
+                                },
+                              )),
+                              Expanded(
+                                child: ListView.builder(
+                                    itemCount: controller.spellanswer.length,
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) {
+                                      return Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(2.0),
+                                            child: Container(
+                                              height: 5,
+                                              width: 25,
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      );
+                                    }),
+                              ),
+                            ],
                           ),
                         ),
                         GridView.builder(

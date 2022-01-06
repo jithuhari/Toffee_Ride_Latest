@@ -7,7 +7,7 @@ class ListenAndSpellController extends GetxController {
     'B',
     'C',
     'D',
-    'E ',
+    'E',
     'F',
     'G',
     'H',
@@ -33,6 +33,15 @@ class ListenAndSpellController extends GetxController {
   ].obs;
 
   List<String> word = List<String>.empty(growable: true).obs;
+  List<String> spellanswer = [
+    'W',
+    'E',
+    'L',
+    'C',
+    'O',
+    'M',
+    'E',
+  ].obs;
 
   @override
   void onInit() {
