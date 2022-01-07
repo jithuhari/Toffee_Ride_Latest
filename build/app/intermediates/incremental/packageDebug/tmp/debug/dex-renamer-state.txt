@@ -1,4 +1,4 @@
-#Thu Jan 06 12:37:41 IST 2022
+#Fri Jan 07 09:47:40 IST 2022
 base.1=/home/nintriva/Desktop/copy/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
 path.1=classes2.dex
 base.0=/home/nintriva/Desktop/copy/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:toffee_ride/features/jithu/math_quiz/math_test_screen.dart';
 import 'package:toffee_ride/features/jithu/math_quiz/quiz_screen.dart';
 
 class Result extends StatefulWidget {
@@ -38,6 +40,8 @@ class _ResultState extends State<Result> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -162,7 +166,8 @@ class _ResultState extends State<Result> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => QuizPAge()));
+                                        builder: (context) =>
+                                            QuizTestScreen()));
                               },
                               child: Image(
                                   width: 50,
